@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+#define HT_SIZE 10
+
+typedef struct lst_iitem {
+   char key[KV_SIZE];
+	 char value[KV_SIZE];
+   struct lst_iitem *next;
+} lst_iitem_t;
+
+// list_t 
+typedef struct {
+   lst_iitem_t * first;
+} list_t;
+
+
+typedef struct shard_t
+{
+	int ShardId;
+	list_t* array[HT_SIZE];
+} shard_t;
+
+
+
+
+list_t* lst_new();
+//inicialização da lista ligada
+list_insert(list_t *list, char *key, char *value);
+//insercao na lista
+//list_lookup(list_t* list, char* key);
+//procura na lista
+list_remove(list_t *list, char *key);
+//remover da lista
+shard_t* shard_new(int shardId);
+//inicialização da shard

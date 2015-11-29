@@ -1,0 +1,11 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <kos_client.h>
+#include <semaphore.h>
+#include <buffer.h>
+
+typedef struct bufferFirst {
+	buffer* buf;
+	//sem_t semaforo_client;
+	//sem_t semaforo_servidor;
+}bufferFirst;
